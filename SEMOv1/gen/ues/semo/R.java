@@ -25,9 +25,9 @@ public final class R {
     }
     public static final class id {
         public static final int action_settings=0x7f080005;
+        public static final int btnLogin=0x7f080004;
         public static final int edtPassword=0x7f080003;
         public static final int edtUsername=0x7f080001;
-        public static final int login=0x7f080004;
         public static final int txtPassword=0x7f080002;
         public static final int txtUsername=0x7f080000;
     }

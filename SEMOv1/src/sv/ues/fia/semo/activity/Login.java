@@ -4,9 +4,14 @@ import ues.semo.R;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class Login extends Activity {
+	//Variables
+	EditText username;
+	EditText password;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,18 +28,15 @@ public class Login extends Activity {
 	
 	
 	
-	public boolean login(){
-		boolean logeo = false;
+	public void loginUser(View v){
 		//Obtencion de parametros de inicio de sesion user y password
-		String username = findViewById(R.id.edtUsername).toString();
-		String password = findViewById(R.id.edtPassword).toString();
-		if(username != null && password != null){
-			logeo = true;
+		username = (EditText) findViewById(R.id.edtUsername);
+		password = (EditText) findViewById(R.id.edtPassword);
+		if(username.getText().length() > 0 && password.getText().length() > 0){
+			Toast.makeText(this, "Bienvenidos " + username.getText().toString(),Toast.LENGTH_SHORT).show();
 		}else{
-			logeo = false;
-			Toast.makeText(Login.this, "Usuario o Password Vacios",	Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, "Usuario o Password Vacios",Toast.LENGTH_SHORT).show();
 		}
-		return logeo;
 	}
 	
 	
